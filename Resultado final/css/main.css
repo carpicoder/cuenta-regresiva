@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background: rgb(255,60,0);
+background: radial-gradient(circle, #ff3c00 0%, #ff3c00 79%, #1c1c1c 79%, #1c1c1c 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.fecha span {
+    font-weight: 600;
+}
+
+.cuenta-atras {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.grupo {
+    line-height: 1;
+}
+
+.grande {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+}
+
+@media (width < 550px) {
+    .cuenta-atras {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width < 350px) {
+    .cuenta-atras {
+        display: flex;
+        flex-direction: column;
+    }
+}
