@@ -1,16 +1,18 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;800&display=swap');
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Rubik", sans-serif;
 }
 
+/* Global Styles */
 body {
-    background: rgb(255,60,0);
-background: radial-gradient(circle, #ff3c00 0%, #ff3c00 79%, #1c1c1c 79%, #1c1c1c 100%);
+    font-family: "Rubik", sans-serif;
+    background: linear-gradient(135deg, #ff0000, #800000);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,8 +22,12 @@ background: radial-gradient(circle, #ff3c00 0%, #ff3c00 79%, #1c1c1c 79%, #1c1c1
     text-align: center;
 }
 
+/* Countdown Timer */
 .fecha span {
+    font-family: "Bebas Neue", sans-serif;
     font-weight: 600;
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 .cuenta-atras {
@@ -31,26 +37,115 @@ background: radial-gradient(circle, #ff3c00 0%, #ff3c00 79%, #1c1c1c 79%, #1c1c1
     justify-content: center;
 }
 
-.grupo {
-    line-height: 1;
-}
-
 .grande {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 800;
+    color: #fff;
+    animation: fadeInDown 1s ease-in-out forwards;
 }
 
-@media (width < 550px) {
-    .cuenta-atras {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+.chico {
+    font-size: 1.2rem;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Estilos para el enlace del video tutorial */
+a.video-tutorial {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+a.video-tutorial:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+
+.input-fecha {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input-fecha input[type="date"] {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.input-fecha input[type="date"]:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.input-fecha button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.input-fecha button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.codigo-actualizado {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (width < 350px) {
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     .cuenta-atras {
-        display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .grande {
+        font-size: 3rem;
     }
 }
